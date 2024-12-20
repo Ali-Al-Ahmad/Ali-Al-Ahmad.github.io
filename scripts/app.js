@@ -220,16 +220,9 @@ function formatSpacesInExpression(expression) {
 
 function changeToDarkMode() {
   document.body.classList.toggle('dark-mode')
-  console.log(button_dark_mode.src)
-  if (
-    button_dark_mode.src ==
-    'http://127.0.0.1:5501/calculator/assets/dark_mode.svg'
-  ) {
-    button_dark_mode.src =
-      'http://127.0.0.1:5501/calculator/assets/white.svg'
-  } else {
-    button_dark_mode.src =
-      'http://127.0.0.1:5501/calculator/assets/dark_mode.svg'
-  }
+  let current_source = button_dark_mode.src
+  if (current_source.includes('dark')) {
+    button_dark_mode.src = current_source.replace('dark_mode.svg', 'white.svg')
+  } 
 }
 
